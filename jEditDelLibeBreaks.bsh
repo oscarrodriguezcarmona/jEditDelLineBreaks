@@ -1,0 +1,14 @@
+// jEdit macro to remove line breaks and leave a single line with all the text
+// from Coursera.org video's subtitle files.
+// by Oscar Rodriguez Carmona
+// http://www.oscarrodriguezcarmona.com
+// Version 2014.07.23.1939
+textArea.goToBufferStart(false);
+int lineCount = textArea.getLineCount() - 1;
+for (int line = 0; line < lineCount; line++)
+{
+     textArea.goToEndOfWhiteSpace(false);
+     textArea.delete();
+     textArea.delete();
+     textArea.setSelectedText(" ");
+}
